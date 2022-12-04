@@ -35,6 +35,7 @@ application/x-html5			        html5
 application/x-apps			        apps
 application/x-game			        game
 EOF
+#-<- should check if line is already added, before re-adding!
 $maysudo cat > /usr/share/mime/packages/x-html5.xml <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
