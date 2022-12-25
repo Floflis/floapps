@@ -92,7 +92,7 @@ rm -rf linux-icon-builder
 echo "Installing handler for .apps, .game and .html5 files..."
 git clone https://github.com/Floflis/floflis-application-handler.git
 cd floflis-application-handler
-$maysudo bash install.sh
+$maysudo sh ./install.sh
 cd "$SCRIPTPATH"
 rm -rf floflis-application-handler
 
