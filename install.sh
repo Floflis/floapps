@@ -21,6 +21,8 @@ fi
 echo "Installing NodeJS..."
 $maysudo apt-get install nodejs npm -y
 
+if [ ! -e /1 ]; then echo "Creating tree root directory...";$maysudo mkdir /1; fi
+
 if [ ! -e /1/apps ]; then echo "Creating HTML5 apps directory...";$maysudo mkdir /1/apps; fi
 
 if [ ! -e /1/games ]; then echo "Creating HTML5 games directory...";$maysudo mkdir /1/games; fi
