@@ -73,8 +73,10 @@ $maysudo update-mime-database /usr/share/mime
 $maysudo gtk-update-icon-cache /usr/share/icons/gnome/ -f
 
 echo "Installing icons for .apps, .game and .html5 files..."
-git clone https://github.com/Floflis/linux-icon-builder.git
-cd linux-icon-builder
+cd include/linux-icon-builder
+if [ ! -e .git ]; then git clone --no-checkout https://github.com/Floflis/linux-icon-builder.git; fi
+if [ -e .git ]; then git pull; fi
+git checkout -f
 sh ./linux-icon-builder "$SCRIPTPATH/include/icons/application-x-apps.png" "mimetypes" "application-x-apps.png"
 sh ./linux-icon-builder "$SCRIPTPATH/include/icons/application-x-game.png" "mimetypes" "application-x-game.png"
 sh ./linux-icon-builder "$SCRIPTPATH/include/icons/application-x-html5.png" "mimetypes" "application-x-html5.png"
@@ -90,8 +92,10 @@ cd "$SCRIPTPATH"
 rm -rf linux-icon-builder
 
 echo "Installing handler for .apps, .game and .html5 files..."
-git clone https://github.com/Floflis/floflis-application-handler.git
-cd floflis-application-handler
+cd include/floflis-application-handler
+if [ ! -e .git ]; then git clone --no-checkout https://github.com/Floflis/floflis-application-handler.git; fi
+if [ -e .git ]; then git pull; fi
+git checkout -f
 $maysudo sh ./install.sh
 cd "$SCRIPTPATH"
 rm -rf floflis-application-handler
