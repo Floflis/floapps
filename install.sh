@@ -81,13 +81,7 @@ sh ./linux-icon-builder "$SCRIPTPATH/include/icons/application-x-apps.png" "mime
 sh ./linux-icon-builder "$SCRIPTPATH/include/icons/application-x-game.png" "mimetypes" "application-x-game.png"
 sh ./linux-icon-builder "$SCRIPTPATH/include/icons/application-x-html5.png" "mimetypes" "application-x-html5.png"
 cd icons
-#-
-if [ ! -e /usr/share/icons/Floflis ]; then
-   cp -r -f --preserve=all . /usr/share/icons/Yaru/
-else
-   cp -r -f --preserve=all . /usr/share/icons/ubuntu/Yaru/
-fi
-#-
+cp -r -f --preserve=all . /usr/share/icons/hicolor/
 cd "$SCRIPTPATH"
 rm -rf linux-icon-builder
 
