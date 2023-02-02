@@ -1,1 +1,1 @@
-- Move icon/mimetype/installer for .html5 to HTML5 Player
+- Move icon/mimetype/installer for .html5 to HTML5 Player (also for Color Converter)
