@@ -32,13 +32,13 @@ echo "Adding Color Converter.html5..."
 cp -f include/html5/Color\ Converter.html5 /1/html5/
 
 echo "Installing mimetypes and their icons..." # this is continuously adding the same entries to /etc/mime.types and have to be fixed
-$maysudo cat >> /etc/mime.types <<EOF
+cat >> /etc/mime.types <<EOF
 application/x-html5			        html5
 application/x-apps			        apps
 application/x-game			        game
 EOF
 #-<- should check if line is already added, before re-adding!
-$maysudo cat > /usr/share/mime/packages/x-html5.xml <<EOF
+cat > /usr/share/mime/packages/x-html5.xml <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
   <mime-type type="application/x-html5">
@@ -49,7 +49,7 @@ $maysudo cat > /usr/share/mime/packages/x-html5.xml <<EOF
 </mime-info>
 
 EOF
-$maysudo cat > /usr/share/mime/packages/x-apps.xml <<EOF
+cat > /usr/share/mime/packages/x-apps.xml <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
   <mime-type type="application/x-apps">
@@ -60,7 +60,7 @@ $maysudo cat > /usr/share/mime/packages/x-apps.xml <<EOF
 </mime-info>
 
 EOF
-$maysudo cat > /usr/share/mime/packages/x-game.xml <<EOF
+cat > /usr/share/mime/packages/x-game.xml <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
   <mime-type type="application/x-game">
