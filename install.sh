@@ -72,20 +72,12 @@ $maysudo cat > /usr/share/mime/packages/x-game.xml <<EOF
 
 EOF
 $maysudo update-mime-database /usr/share/mime
-$maysudo gtk-update-icon-cache /usr/share/icons/gnome/ -f
 
 echo "Installing icons for .apps, .game and .html5 files..."
-cd include/linux-icon-builder
-if [ ! -e .git ]; then git clone --no-checkout https://github.com/Floflis/linux-icon-builder.git; fi
-if [ -e .git ]; then git pull; fi
-git checkout -f
-sh ./linux-icon-builder "$SCRIPTPATH/include/icons/application-x-apps.png" "mimetypes" "application-x-apps.png"
-sh ./linux-icon-builder "$SCRIPTPATH/include/icons/application-x-game.png" "mimetypes" "application-x-game.png"
-sh ./linux-icon-builder "$SCRIPTPATH/include/icons/application-x-html5.png" "mimetypes" "application-x-html5.png"
-cd icons
-cp -r -f --preserve=all . /usr/share/icons/hicolor/
+cd include/icons
+cp -r -f --preserve=all . /usr/share/icons/hicolor/scalable/mimetypes/
 cd "$SCRIPTPATH"
-rm -rf linux-icon-builder
+$maysudo gtk-update-icon-cache /usr/share/icons/gnome/ -f
 
 echo "Installing handler for .apps, .game and .html5 files..."
 cd include/floflis-application-handler

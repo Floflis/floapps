@@ -1,0 +1,3 @@
+- Move icons/mimetypes/installer for .apps/.game to floflis-application-handler
+
+- Move icon/mimetype/installer for .html5 to HTML5 Player
